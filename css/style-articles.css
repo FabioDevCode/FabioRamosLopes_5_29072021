@@ -1,0 +1,22 @@
+main {
+    height: calc(100vh - 192px);
+    width: 100%;
+}
+
+#article {
+    height: calc(100vh - 192px);
+    width: 100%;
+    overflow: hidden;
+}
+
+#bloc-article-img {
+    height: calc(100vh - 192px);
+    width: 500px;
+    overflow: hidden;
+    background-color: tomato;
+}
+
+#article-img {
+    height: calc(100vh - 192px);
+    width: 500px;
+}

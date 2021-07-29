@@ -1,0 +1,53 @@
+*, ::before, ::after, h1, h2, h3, h4, h5, h6, p, nav, a {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    color: black;
+}
+
+html {
+    font-family: 'Poppins', sans-serif;
+    min-width: 375px;
+}
+
+body {
+    background-color: #F3E9F1;
+    overflow-x: hidden;
+     
+}
+
+header {
+    background-color: #F3E9F1;
+}
+
+nav a:hover {
+    border-bottom: 2px solid black;
+}
+
+h1 {
+    text-shadow: 0 0 12px white;
+    font-family: 'Pacifico', cursive;
+}
+
+/* ---- Nombre d'article ---- */
+
+#nb-articles {
+    color: black;
+    font-weight: 600;
+    background-color: #ff9f43;
+    line-height: 25px;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+}
+
+/* ---- Footer ---- */
+
+#text-footer p {
+    color: white;
+}
+
+.fa-copyright {
+    filter: invert(1);
+    margin-right: 8px;
+}
