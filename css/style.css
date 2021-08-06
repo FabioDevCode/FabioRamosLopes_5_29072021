@@ -1,54 +1,94 @@
 /*----- Card -----*/
+.msg-accueil {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5em;
+    height: 250px;
+    width: 50%;
+    min-width: 320px;
+    margin: 0 auto;
+}
 
-#card {
+.msg-accueil p {
+    margin: 5px 0;
+}
+
+.card {
     display: flex;
     flex-direction: column;
     align-items: center;
+    height: auto;
     width: 24%;
     min-width: 350px;
-    height: auto;
     margin-bottom: 35px;
     background-color: white;
     overflow: hidden;
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
     border-radius: 16px;
 }
-
-#bloc-img {
-    width: 350px;
-    height: 350px;
-    overflow: hidden;
+.none {
+    display: none;
 }
 
-#card img {
+.cardError {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-weight: 600;
+    font-size: 1.5em;
+    height: 250px;
+    width: 60%;
+    min-width: 320px;
+    margin: 0 auto;
+    color: red;
+    
+}
+
+.cardError p {
+    margin: 5px 0;
+    color: red;
+}
+
+.bloc.img {
+    overflow: hidden;
     width: 350px;
     height: 350px;
-    margin-bottom: 25px;
+    
+}
+
+.card img {
+    border-bottom: 3px solid #c1b0f5;
+    width: 100%;
+    height: 350px;
     object-fit: cover;
     object-position: center;
 }
 
-#card h3 {
+.card h3 {
     font-size: 1.2em;
     font-weight: 600;
     margin-top: 16px;
-    cursor: none;
+    cursor: default;
 }
 
-#card a {
+.card a {
     margin-top: 24px;
-    margin-bottom: 20px;
+    margin-bottom: 30px;
     display: inline-block;
     text-align: center;
     background-color: #c1b0f5;
     width: 35%;
     font-weight: 600;
-    line-height: 30px;
-    height: 30px;
-    border-radius: 15px;
+    line-height: 40px;
+    height: 40px;
+    border-radius: 25px;
     box-shadow:0 0 10px rgba(0, 0, 0, 0.3);
 }
 
-#card a:hover {
+.card a:hover {
     transform: scale(1.05);  
 } 

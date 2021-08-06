@@ -7,13 +7,11 @@
 
 html {
     font-family: 'Poppins', sans-serif;
-    min-width: 375px;
 }
 
 body {
     background-color: #F3E9F1;
-    overflow-x: hidden;
-     
+    overflow-x: hidden;   
 }
 
 header {

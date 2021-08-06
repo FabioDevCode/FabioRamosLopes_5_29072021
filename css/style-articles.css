@@ -8,7 +8,7 @@ main {
     height: calc(100vh - 192px);
     width: 60%;
     margin: 0 auto;
-    overflow: hidden;
+    
 }
 
 #bloc-article-img {
@@ -61,7 +61,7 @@ select {
 
 button {
     height: 50px;
-    width: 250px;
+    width: 200px;
     margin-top: 80px;
     background-color: #c1b0f5;
     border-radius: 30px;
