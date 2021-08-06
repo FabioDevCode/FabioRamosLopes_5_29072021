@@ -15,7 +15,10 @@
     <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
     <link rel="stylesheet" href="./css/commun.css">
     <link rel="stylesheet" href="./css/style-articles.css">
-    
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script defer src="./js/appelapi.js" ></script>
+    <script defer src="./js/application.js"></script>
 
     <title>Ours en peluche</title>
 </head>
@@ -39,18 +42,28 @@
     </header>
 
 
-    <main>
+    <main class="">
         <div id="article" class="flex ">
             <div id="bloc-aricle-img" class="mr-16">
                 <img id="article-img" src="./images/ex/oursp1.jpg" alt="ours en peluche">
             </div>
 
             
-            <div id="bloc-article-text">
-                Voici l'ours
-
-
-            </div>
+            <section id="bloc-article-text">
+                <h2>L'ours en peluche</h2>
+                <div class="prix">39€</div>
+                <form action="">
+                    <label for="color">Choisir la couleur :</label>
+                    <select name="color" id="color">
+                        <option value="marron">Marron</option>
+                        <option value="beige">Beige</option>
+                        <option value="rouge">Rouge</option>
+                    </select>
+                    <button>Ajouter au panier</button>
+                </form>
+                
+                
+            </section>
         </div>
     </main>
 
