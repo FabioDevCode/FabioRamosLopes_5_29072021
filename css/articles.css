@@ -1,0 +1,157 @@
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+    min-height: calc(100vh - 192px);
+    width: 1280px;
+    margin: 0 auto;
+}
+
+.article {
+    display: flex;
+    align-items: center;
+    height: 65vh;
+    width: 100%;
+    overflow: hidden;
+    border-radius: 15px;
+    border: 1px solid #c1b0f5;
+}
+
+#bloc-article-img {
+    height: 100%;
+    width: 35%;
+    min-width: 320px;
+    overflow: hidden;
+    
+}
+
+#article-img {
+    margin-right: 35px;
+    height: 100%;
+    width: 450px;
+    min-width: 320px;
+    object-fit: cover;
+    object-position: center;
+    border-right: 2px solid #c1b0f5;
+}
+
+#bloc-article-text {
+    height: 100%;
+    width: calc(65% - 35px);
+    min-width: 320px;
+    padding: 0 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    text-align: center;
+}
+
+#bloc-article-text h2 {
+    margin-top: 50px;
+    font-weight: 700;
+    font-size: 1.5em;
+}
+
+.prix {
+    font-weight: 600;
+    font-size: 1.25em;
+    margin-bottom: 15px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+label {
+    margin-bottom: 5px;
+}
+
+select {
+    width: 150px;
+    margin-bottom: 25px;
+}
+
+#quantité {
+    margin-bottom: 55px;
+}
+
+button {
+    height: 50px;
+    width: 200px;
+    background-color: #c1b0f5;
+    border-radius: 30px;
+    font-weight: 600;
+    box-shadow:0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+button:hover {
+    transition: all 150ms linear;
+    transform: scale(1.05);
+    box-shadow:0 0 15px rgba(193, 176, 245, 0.6);
+    color: white;
+}
+
+a.retour {
+    color: #acaaaa;
+    display: block;
+    height: 50px;
+    width: 200px;
+    border-radius: 30px;
+    font-weight: 600;
+    line-height: 50px;
+    border: 1px solid #acaaaa;
+    margin-bottom: 50px;
+}
+
+a.retour:hover {
+    color: #c1b0f5;
+    transform: scale(1.05);
+    border: 1px solid #c1b0f5;
+    transition: all 150ms linear;
+}
+
+
+
+/* Responsive */
+@media screen and (max-width: 1280px) {
+
+    main {
+        width: 100%;
+    }
+
+    .article {
+        border-radius: 0px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    
+    .article {
+        flex-direction: column;
+        height: auto;
+        border: none;
+    }
+
+    #bloc-article-img {
+        height: 320px;
+    }
+
+    #article-img {
+        height: 450px;
+        margin: 0 auto;
+        border: none;
+    }
+
+    #bloc-article-text {
+        width: 100%;
+        height: 550px;
+    }
+
+    button {
+        margin-bottom: 20px;
+    }
+}

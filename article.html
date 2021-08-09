@@ -14,8 +14,9 @@
     integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
     <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
     <link rel="stylesheet" href="./css/commun.css">
-    <link rel="stylesheet" href="./css/style-articles.css">
+    <link rel="stylesheet" href="./css/articles.css">
 
+    <script defer src="./js/article.js"></script>
     <script defer src="./js/app.js"></script>
 
     <title>Ours en peluche</title>
@@ -25,11 +26,7 @@
         <div class="max-w-screen-xl h-16 mx-auto flex justify-between px-4 items-center ">
             <img src="./images/logo-orinoco.png" alt="logo orinoco" class="h-16 ">
             <nav class="w-max flex justify-center items-center">
-                <a href="index.html" id="panier" class="flex items-center ">
-                    <i class="fas fa-angle-left mr-2 text-xl"></i>
-                    <p class="font-bold text-xl">Retour</p>
-                </a>
-
+                
                 <a href="panier.html" id="panier" class="flex items-center ml-8 ">
                     <i class="fas fa-shopping-basket mr-2 text-xl"></i>
                     <p class="font-bold text-xl">Panier</p>
@@ -39,34 +36,49 @@
         </div>
     </header>
 
-
-
     <main id="mainArticle">
-        <div id="article" class="flex ">
-            <div id="bloc-aricle-img" class="mr-16">
+
+        <div class="article">
+
+
+            <div id="bloc-aricle-img">
                 <img id="article-img" src="./images/oursp3.jpg" alt="ours en peluche">
             </div>
 
-            
             <section id="bloc-article-text">
                 <h2>L'ours en peluche</h2>
-                <div class="prix">99999999€</div>
-                <form action="">
+                <div>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptates, quis.</div>
+                <div class="prix">9999 €</div>
+
+                <form action="" method="POST">
                     <label for="color">Choisir la couleur :</label>
                     <select name="color" id="color">
                         <option value="marron">Marron</option>
                         <option value="beige">Beige</option>
                         <option value="rouge">Rouge</option>
                     </select>
+
+                    <label for="quantité">Quantité :</label>
+                    <select name="quantité" id="quantité">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                    </select>
+
                     <button>Ajouter au panier</button>
                 </form>
-                
-                
+
+                <a href="index.html" class="retour flex items-center  ">
+                    Retour
+                </a>
             </section>
+
+
         </div>
+
     </main>
-
-
 
     <footer class="w-screen h-32 bg-gray-900 flex flex-row justify-center items-center ">
 

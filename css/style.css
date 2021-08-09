@@ -21,8 +21,8 @@
     align-items: center;
     height: auto;
     width: 24%;
-    min-width: 350px;
-    margin-bottom: 35px;
+    min-width: 320px;
+    margin: 0 5px 35px 5px;
     background-color: white;
     overflow: hidden;
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
@@ -75,20 +75,42 @@
     cursor: default;
 }
 
+.card .prix {
+    font-size: 1.1em;
+    font-weight: 400;
+    margin-top: 5px;
+}
+
 .card a {
     margin-top: 24px;
     margin-bottom: 30px;
     display: inline-block;
     text-align: center;
     background-color: #c1b0f5;
-    width: 35%;
+    width: 40%;
     font-weight: 600;
-    line-height: 40px;
-    height: 40px;
-    border-radius: 25px;
+    line-height: 45px;
+    height: 45px;
+    border-radius: 35px;
     box-shadow:0 0 10px rgba(0, 0, 0, 0.3);
 }
 
 .card a:hover {
-    transform: scale(1.05);  
+    color: white;
+    transform: scale(1.05);
+    box-shadow:0 0 15px rgba(193, 176, 245, 0.6);
+    transition: all 150ms linear;
 } 
+
+/* Responsive */
+
+@media screen and (max-width: 425px) {
+
+    .card {
+        border-radius: 0px;
+        width: 100%;
+        margin: 0 0 35px 0;
+        box-shadow: 0 0 12px rgba(0, 0, 0, 0.2);
+    }
+
+}

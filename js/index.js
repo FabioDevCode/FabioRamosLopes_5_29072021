@@ -10,32 +10,35 @@ fetch(url)
 .then(function(data) {
     const objets = data;
     console.log(objets);
-    // teste de répartition des éléments
+    
+    // Répartition des objets en forme de carte
     for (let objet in objets) {
-
+        // Suppression du message initial.
         msgAccueil.classList.add("none")
+        // Converssion du prix en euro pour affichage
+        const priceEuro = (objets[objet].price / 100).toFixed(2);
+
+        // Création de cartes
         let objetCarte = document.createElement("div");
         objetCarte.classList.add("card");
-        objetCarte.innerHTML = `
-        <div class="bloc-img">
+        objetCarte.innerHTML = 
+        `<div class="bloc-img">
         <img src=${objets[objet].imageUrl}>
         </div>
         <h3>${objets[objet].name}</h3>
-        <a href="article.html"> Voir plus </a>
-        `;
+        <div class="prix">${priceEuro} €</div>
+        <a href="article.html" id=${objets[objet]._id} class="lien" onclick="setData(id)"> Choisir </a>`;
 
         mainIndex.appendChild(objetCarte);
-        ;
+
     }
 }))
-
-// Message d'erreur si problème avec l'adresse de l'API 
+// Message d'erreur si problème de serveur
 .catch((error) => {
     msgAccueil.classList.add("none");
     mainIndex.innerHTML = 
     `<div class="cardError">
         <p> Désolé, nous n'avons pas pu charger les articles.</p> 
-        <p> Vérifier si l'adresse de l'API est correcte puis réessayez.</p>
-    </div>`;
-    
+        <p> Vérifier que le serveur soit bien fonctionnel.</p>
+    </div>`; 
 });

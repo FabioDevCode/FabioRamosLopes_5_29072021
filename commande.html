@@ -13,54 +13,32 @@
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" 
     integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
     <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
-
     <link rel="stylesheet" href="./css/commun.css">
-    <link rel="stylesheet" href="./css/style.css">
 
-
-    <script defer src="./js/index.js" ></script>
-    <script defer src="./js/app.js"></script>
-
-    <title>Orinoco</title>
+    <title>Votre commande</title>
 </head>
-
 <body>
     <header class="w-screen h-16 shadow-md ">
         <div class="max-w-screen-xl h-16 mx-auto flex justify-between px-4 items-center ">
             <img src="./images/logo-orinoco.png" alt="logo orinoco" class="h-16 ">
             <nav class="w-max flex justify-center items-center">
-                <a href="panier.html" id="panier" class="flex items-center ">
-                    <i class="fas fa-shopping-basket mr-2 text-xl"></i>
-                    <p class="font-bold text-xl">Panier</p>
+                <a href="index.html" id="panier" class="flex items-center ">
+                    <i class="fas fa-angle-left mr-2 text-xl"></i>
+                    <p class="font-bold text-xl">Retour</p>
                 </a>
-                <div id="nb-articles" class="ml-2 flex justify-center items-center relative hidden "> 2 </div>
             </nav>
         </div>
     </header>
 
-
-    <div class="h-96 overflow-hidden relative flex justify-center items-center px-4 border-b-2 border-purple-400 ">
-        <h1 class="mx-auto z-10 text-6xl font-extrabold text-center ">Ours en peluche fait à la main</h1>
-        <img src="./images/teddy-bears-4.jpg" alt="nounours" class="absolute w-full h-full object-cover object-center filter grayscale ">
-    </div>
+    <main>
 
 
-    <section class="flex w-screen flex-col items-center ">
-        <h2 class="mt-12 text-3xl font-semibold ">Nos produits</h2>
-        <div class="msg-accueil">
-            <p>Merci de patienter.</p>
-            <p>En attente du retour serveur.</p>
-        </div>
-        
-        <main class="w-full max-w-screen-xl mt-12 h-auto flex flex-wrap justify-evenly pb-16 " id="mainIndex">
 
 
-        </main>
-
-    </section>
+    </main>
 
 
-    <footer class="w-full h-32 bg-gray-900 flex flex-row justify-center items-center ">
+    <footer class="w-screen h-32 bg-gray-900 flex flex-row justify-center items-center ">
 
         <div id="text-footer" class="flex justify-center items-center ">
             <i class="far fa-copyright"></i>
@@ -68,6 +46,5 @@
         </div>
 
     </footer>
-    
 </body>
 </html>
