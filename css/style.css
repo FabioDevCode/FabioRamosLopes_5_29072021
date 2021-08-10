@@ -11,10 +11,6 @@
     margin: 0 auto;
 }
 
-.msg-accueil p {
-    margin: 5px 0;
-}
-
 .card {
     display: flex;
     flex-direction: column;

@@ -1,4 +1,5 @@
-console.log('Hello Wolrd');
+console.log('Bienvenue sur mon projet Orinoco');
+console.log("");
 const mainIndex = document.querySelector("#mainIndex");
 const msgAccueil = document.querySelector(".msg-accueil");
 
@@ -9,16 +10,18 @@ fetch(url)
 
 .then(function(data) {
     const objets = data;
-    console.log(objets);
+    console.table(objets);
     
     // Répartition des objets en forme de carte
     for (let objet in objets) {
-        // Suppression du message initial.
+        
         msgAccueil.classList.add("none")
-        // Converssion du prix en euro pour affichage
+        // Converssion du prix
         const priceEuro = (objets[objet].price / 100).toFixed(2);
-
-        // Création de cartes
+        
+        const urlForEachArticle = "article.html" + "?" + objets[objet]._id;
+    
+        // Création des cartes
         let objetCarte = document.createElement("div");
         objetCarte.classList.add("card");
         objetCarte.innerHTML = 
@@ -27,7 +30,7 @@ fetch(url)
         </div>
         <h3>${objets[objet].name}</h3>
         <div class="prix">${priceEuro} €</div>
-        <a href="article.html" id=${objets[objet]._id} class="lien" onclick="setData(id)"> Choisir </a>`;
+        <a href=${urlForEachArticle} id=${objets[objet]._id} class="lien"> Choisir </a>`;
 
         mainIndex.appendChild(objetCarte);
 
