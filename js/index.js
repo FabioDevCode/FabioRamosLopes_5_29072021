@@ -1,5 +1,5 @@
-console.log('Bienvenue sur mon projet Orinoco');
-console.log("");
+console.log('Bienvenue sur mon projet Orinoco version teddies');
+
 const mainIndex = document.querySelector("#mainIndex");
 const msgAccueil = document.querySelector(".msg-accueil");
 
@@ -11,11 +11,11 @@ fetch(url)
 .then(function(data) {
     const objets = data;
     console.table(objets);
-    
+
     // Répartition des objets en forme de carte
     for (let objet in objets) {
         
-        msgAccueil.classList.add("none")
+        msgAccueil.classList.add("cache");
         // Converssion du prix
         const priceEuro = (objets[objet].price / 100).toFixed(2);
         
