@@ -24,8 +24,8 @@ fetch(urlArticle)
     let articleCarte = document.createElement("div");
     articleCarte.classList.add("article");
 
-    articleCarte.innerHTML = `
-
+    articleCarte.innerHTML = 
+    `
     <img id="article-img" src=${articleOurs.imageUrl} alt="ours en peluche">
 
     <section id="bloc-article-text">

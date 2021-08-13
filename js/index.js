@@ -1,6 +1,7 @@
-console.log('Bienvenue sur mon projet Orinoco version teddies');
+console.log('Orinoco - version teddies - par Fabio RAMOS LOPES');
 
 const mainIndex = document.querySelector("#mainIndex");
+
 const msgAccueil = document.querySelector(".msg-accueil");
 
 let url = `http://localhost:3000/api/teddies/`;
@@ -35,10 +36,11 @@ fetch(url)
         mainIndex.appendChild(objetCarte);
 
     }
+
 }))
 // Message d'erreur si problème de serveur
 .catch((error) => {
-    msgAccueil.classList.add("none");
+    msgAccueil.classList.add("cache");
     mainIndex.innerHTML = 
     `<div class="cardError">
         <p> Désolé, nous n'avons pas pu charger les articles.</p> 

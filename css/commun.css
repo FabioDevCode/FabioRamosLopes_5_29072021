@@ -60,13 +60,18 @@ header div div {
 
 /* ---- Footer ---- */
 
+#text-footer {
+    margin: 0 15px;
+}
+
 #text-footer p {
     color: white;
+    text-align: center;
 }
 
 .fa-copyright {
     filter: invert(1);
-    margin-right: 8px;
+    margin-right: 5px;
 }
 
 .cache {
