@@ -1,4 +1,5 @@
 const urlWindow = window.location.search;
+
 let idArticle = urlWindow.slice(1);
 
 let urlArticle = `http://localhost:3000/api/teddies/` + idArticle;

@@ -15,7 +15,15 @@
     <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
     <link rel="stylesheet" href="./css/commun.css">
 
-    <title>Votre panier</title>
+    <link rel="stylesheet" href="./css/commun.css">
+    <link rel="stylesheet" href="./css/panier.css">
+
+
+
+    <script defer src="./js/panier.js"></script>
+    <script defer src="./js/app.js"></script>
+
+    <title>Panier</title>
 </head>
 <body>
     <header class="w-screen h-16 shadow-md ">
@@ -31,12 +39,71 @@
         </div>
     </header>
 
+
+
     <main>
-        <a href="" >Envoie</a>
+        
+        <section>
+            <h2 class="">Vos articles</h2>
 
+            <div id="liste-panier">
+                <p class="cache">Votre panier est vide</p>
+                <div class="liste_articles"></div>
+                <div class="articles-titre">
+                    <div>Nom</div><div>Couleur</div><div>Quantité</div><div>Prix</div>
+                </div>
+                <!-- Espace interactif pour les articles -->
+                <div class="articles-panier">
+                    <div class="name">Norbert</div>
+                    <div class="color">Chocolate</div>
+                    <div class="quantity">2</div>
+                    <div class="price">29.00 €</div>
+                </div>
+                <div class="articles-panier">
+                    <div class="name">Norbert</div>
+                    <div class="color">Chocolate</div>
+                    <div class="quantity">2</div>
+                    <div class="price">29.00 €</div>
+                </div>
+                <div class="articles-panier">
+                    <div class="name">Norbert</div>
+                    <div class="color">Chocolate</div>
+                    <div class="quantity">2</div>
+                    <div class="price">29.00 €</div>
+                </div>
+                <div class="articles-panier">
+                    <div class="name">Norbert</div>
+                    <div class="color">Chocolate</div>
+                    <div class="quantity">2</div>
+                    <div class="price">29.00 €</div>
+                </div>
+                <div class="articles-panier">
+                    <div class="name">Norbert</div>
+                    <div class="color">Chocolate</div>
+                    <div class="quantity">2</div>
+                    <div class="price">29.00 €</div>
+                </div>
+  
+    
+            </div>
 
+            <h2 class="">Vos informations</h2>
 
+            <form id="contact" action="" method="">
+                <input id="firstName" type="text" placeholder="Prénom">
+                <input id="lastName" type="text" placeholder="Nom">
+                <input id="address" type="text" placeholder="Adresse">
+                <input id="city" type="text" placeholder="Ville">
+                <input id="email" type="text" placeholder="Email">
+
+                <button>Commander</button>
+                <a href="index.html" class="retour text-center">Continuez vos achats</a>
+            </form>
+            
+        </section>
+    
     </main>
+
 
 
     <footer class="w-full h-32 bg-gray-900 flex flex-row justify-center items-center ">

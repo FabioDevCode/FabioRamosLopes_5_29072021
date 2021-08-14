@@ -2,7 +2,6 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    color: black;
 }
 
 html {
@@ -11,6 +10,7 @@ html {
 }
 
 body {
+    color: black;
     background-color: #F3E9F1;
       
 }
@@ -70,10 +70,13 @@ header div div {
 }
 
 .fa-copyright {
-    filter: invert(1);
     margin-right: 5px;
 }
 
 .cache {
     display: none;
 }
+
+/* ---- Boutons ----*/
+
+
