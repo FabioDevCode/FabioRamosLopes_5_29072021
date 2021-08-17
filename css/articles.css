@@ -2,8 +2,8 @@ main {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: auto;
     min-height: calc(100vh - 192px);
+    height: auto;
     width: 1280px;
     margin: 0 auto;
 }
@@ -49,10 +49,9 @@ main {
     font-size: 1.5em;
 }
 
-.prix {
+.prixArticle {
     font-weight: 600;
     font-size: 1.25em;
-    margin-bottom: 15px;
 }
 
 form {
@@ -67,14 +66,14 @@ label {
 
 select {
     width: 150px;
-    margin-bottom: 25px;
-}
-
-#quantité {
-    margin-bottom: 55px;
+    margin-bottom: 100px;
 }
 
 button {
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     height: 50px;
     width: 200px;
     background-color: #c1b0f5;
@@ -91,6 +90,7 @@ button:hover {
 }
 
 a.retour {
+    z-index: 1000;
     color: #acaaaa;
     display: block;
     height: 50px;
@@ -99,7 +99,7 @@ a.retour {
     font-weight: 600;
     line-height: 50px;
     border: 1px solid #acaaaa;
-    margin-bottom: 50px;
+    margin-bottom: 25px;
 }
 
 a.retour:hover {
@@ -119,22 +119,29 @@ a.retour:hover {
     main {
         height: auto;
         width: 100%;
+        
     }
 
     .article {
         border-radius: 0px;
     }
 
-    .description {
+    .descriptionArticle {
         margin-bottom: 20px;
     }
 }
 
 @media screen and (max-width: 850px) {
+
+    main {
+        border-color: transparent;
+        display: block;
+        height: 1100px;
+    }
     
     .article {
         flex-direction: column;
-        height: auto;
+        height: 100%;
         border: none;
     }
 

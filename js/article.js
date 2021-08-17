@@ -1,78 +1,99 @@
-const urlWindow = window.location.search;
+mainArticle()
 
-let idArticle = urlWindow.slice(1);
+function mainArticle() {
+    const urlWindow = window.location.search;
 
-let urlArticle = `http://localhost:3000/api/teddies/` + idArticle;
+    let idArticle = urlWindow.slice(1);
 
-const mainArticle = document.querySelector("#mainArticle");
+    let urlArticle = `http://localhost:3000/api/teddies/` + idArticle;
 
-fetch(urlArticle)
-.then(response => response.json()
+    const mainArticle = document.querySelector("#mainArticle");
 
-.then(function(data) {
+    fetch(urlArticle)
+    .then(response => response.json()
 
-    const articleOurs = data;
-    const colors = data.colors;
+    .then(function(data) {
 
-    console.table(articleOurs);
-    console.table(colors);
+        const articleOurs = data;
+        const colors = data.colors;
 
-    // Converssion du prix
-    // const priceEuro = (articleOurs.price / 100).toFixed(2);
-    const priceEuro = convertPrice(articleOurs.price);
+        // Converssion du prix
+        // const priceEuro = (articleOurs.price / 100).toFixed(2);
+        const priceEuro = convertPrice(articleOurs.price);
 
-    // Création dynamique de la page article
-    let articleCarte = document.createElement("div");
-    articleCarte.classList.add("article");
+        // Création dynamique de la page article
+        let articleCarte = document.createElement("div");
+        articleCarte.classList.add("article");
 
-    articleCarte.innerHTML = 
-    `
-    <img id="article-img" src=${articleOurs.imageUrl} alt="ours en peluche">
+        articleCarte.innerHTML = 
+        `
+        <img id="article-img" src=${articleOurs.imageUrl} alt="ours en peluche">
 
-    <section id="bloc-article-text">
-        <h2>${articleOurs.name}</h2>
-        <div class="description"> ${articleOurs.description} </div>
-        <div class="prix">${priceEuro} €</div>
+        <section id="bloc-article-text">
+            <h2 class="nameArticle">${articleOurs.name}</h2>
+            <div class="descriptionArticle"> ${articleOurs.description} </div>
+            <div class="prixArticle">${priceEuro} €</div>
 
-        <form>
-            <label for="color">Choisir la couleur :</label>
-            <select name="color" id="color">
-            
-            </select>
-
-            <label for="quantité">Quantité :</label>
-                <select name="quantité" id="quantité">
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>
-                    <option value="5">5</option>
+            <form>
+                <label for="color">Choisir la couleur :</label>
+                <select name="color" id="color">
+                
                 </select>
 
-                <button>Ajouter au panier</button>
-        </form>
+                <button id=${articleOurs._id}>Ajouter au panier</button>
+            </form>
 
-        <a href="index.html" class="retour flex items-center  ">
-        Retour
-        </a>
-    </section>
-    `;
+            <a href="index.html" class="retour flex items-center  ">
+            Retour
+            </a>
+        </section>
+        `;
 
-    mainArticle.appendChild(articleCarte);
+        mainArticle.appendChild(articleCarte);
 
-    // ajout des couleurs dynamiques en fonction du nombre de couleur
-    function addColors() {
+        // ajout des couleurs dynamiques en fonction du nombre de couleur
+        function addColors() {
 
-        const colorsIndex = document.querySelector('#color');
+            const colorsIndex = document.querySelector('#color');
 
-        let numOfColors = 0;
+            let numOfColors = 0;
+            
+            for (numOfColors; numOfColors < colors.length; numOfColors++ ) {
+                colorsIndex.innerHTML += 
+                `<option class="optionColor" value="${colors[numOfColors]}">${colors[numOfColors]}</option>`
+            };
+        }
+
+        addColors();
+
+        const buttonSendPanier = document.querySelector("button");
+
+        buttonSendPanier.addEventListener("click", function(e) {
+            console.log('click');
+            console.log(e.composedPath(2));
+            const colorArticleC = document.querySelectorAll("option");
+
         
-        for (numOfColors; numOfColors < colors.length; numOfColors++ ) {
-            colorsIndex.innerHTML += 
-            `<option class=${colors[numOfColors]} value=${colors[numOfColors]}>${colors[numOfColors]}</option>`
-        };
+            e.preventDefault();
+        }) 
+ 
+    
+    }));
+
+    function errorPage() {
+        const urlPageArticle = window.location.search;
+        let scearchParams = new URLSearchParams(urlPageArticle);
+    
+        let couleurChoisi = scearchParams.get("color");
+    
+        if(couleurChoisi == null) {
+    
+        } else {
+            console.log(couleurChoisi);
+        }
+    
     }
+    
+    errorPage()
 
-    addColors();
-
-}));
+}

@@ -14,7 +14,7 @@ function mainIndex(){
     fetch(urlApi)
     
     .then(function(response) {
-
+        // exécution en cas d'erreur
         if (response.status >= 400 && response.status < 600) {
             const codeErreur = response.status;
 
@@ -53,11 +53,14 @@ function mainIndex(){
         }
 
         return response.json();
+
     })
     .then(function(data) {
 
         const objets = data;
+        console.table(data)
         const nombreDePeluches = objets.length;
+        console.log(objets)
 
         function bientotNouveauProduits() {
             // création d'une carte si le nombre de produits est impair
@@ -103,8 +106,6 @@ function mainIndex(){
         creationCartePourProduits()
         bientotNouveauProduits()
         
-
-
     })
     // Message d'erreur si problème de serveur
     .catch((error) => {
@@ -120,5 +121,5 @@ function mainIndex(){
         problemeServeur()
         
     });
-
+    
 }
