@@ -1,13 +1,14 @@
 mainArticle()
 
 function mainArticle() {
-    const urlWindow = window.location.search;
 
+    const urlWindow = window.location.search;
     let idArticle = urlWindow.slice(1);
 
     let urlArticle = `http://localhost:3000/api/teddies/` + idArticle;
 
     const mainArticle = document.querySelector("#mainArticle");
+
 
     fetch(urlArticle)
     .then(response => response.json()
@@ -66,34 +67,68 @@ function mainArticle() {
 
         addColors();
 
-        const buttonSendPanier = document.querySelector("button");
+        // Entrain de travailler sur la fonction ajoutAuPanier()
+        //------------------------------------------------------
+        // 1 - Récupérer les données
+        // 2 - Créer un objets avec les infos
+        // 3 - Récupérer l'objet panier (un Array)
+        // 4 - Transformer l'objet des données en String
+        // 5 - push la String de l'objet dans le tableau
+        // 6 - Actualiser le tableau dans local storage
 
-        buttonSendPanier.addEventListener("click", function(e) {
-            console.log('click');
-            console.log(e.composedPath(2));
-            const colorArticleC = document.querySelectorAll("option");
+        function ajoutAuPanier() {
 
-        
-            e.preventDefault();
-        }) 
+            const buttonSendPanier = document.querySelector("button");
+
+            buttonSendPanier.addEventListener("click", function(e) {
+    
+                e.preventDefault();
+                
+                const nameArticleChoisi = document.querySelector("h2");
+                const urlArticleChoisi = window.location.search;
+                const couleurChoisi = document.querySelector("#color");
+                const prixArticleChoisi = document.querySelector(".prixArticle");
+                
+                const articleChoisi = {
+                    name: nameArticleChoisi.textContent,
+                    id: urlArticleChoisi.slice(1),
+                    color: couleurChoisi.options[couleurChoisi.selectedIndex].text,
+                    price: prixArticleChoisi.textContent
+                };
+
+                let stringArticleChoisi = JSON.stringify(articleChoisi)
+
+                console.log(stringArticleChoisi);
+
+
+                setOrGetPanier()
+                // fonction récupérer ou créer Panier dans localStorage
+
+                // transformer en boulce qui rajoute les Objets des articles a l'Array du localstorage
+                function setOrGetPanier() {
+
+                    if(localStorage.getItem('panierKey') == null) {
+
+                        let panierArray = [];
+
+                        localStorage.setItem("panierKey", panierArray);
+                
+                    } else {
+                
+                    };
+                    
+                }
+
+                
+
+                
+                
+            }) 
+        }
+
+        ajoutAuPanier()
  
     
     }));
-
-    function errorPage() {
-        const urlPageArticle = window.location.search;
-        let scearchParams = new URLSearchParams(urlPageArticle);
-    
-        let couleurChoisi = scearchParams.get("color");
-    
-        if(couleurChoisi == null) {
-    
-        } else {
-            console.log(couleurChoisi);
-        }
-    
-    }
-    
-    errorPage()
 
 }

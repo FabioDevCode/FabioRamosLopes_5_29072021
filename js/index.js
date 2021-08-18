@@ -85,7 +85,7 @@ function mainIndex(){
             
                 msgAccueil.classList.add("cache");
 
-                const priceEuro = (objets[objet].price / 100).toFixed(2);
+                const priceEuro = convertPrice(objets[objet].price);
                 
                 const urlForEachArticle = "article.html" + "?" + objets[objet]._id;
             

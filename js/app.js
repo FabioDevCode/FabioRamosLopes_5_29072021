@@ -1,17 +1,19 @@
+// fonction de converssion du prix
 function convertPrice(price) {
-    return (price / 100).toFixed(2);
+    return (price / 100);
 }
 
+// fonction récupérer ou créer Panier dans localStorage
+function setOrGetPanier() {
 
+    if(localStorage.getItem('panierKey') == null) {
 
-// Récupérer id de l'article (mettre onclick= setData() dans le DOM)
-// function setData(idArticle) {
+        let panierArray = [];
+
+        localStorage.setItem("panierKey", panierArray);
+ 
+    } else {
+ 
+    };
     
-//     alert("Article ajouter au panier ! NON ! c'est une blague ça fonctionne pas encore")
-// }
-
-
-
-
-
-
+}
