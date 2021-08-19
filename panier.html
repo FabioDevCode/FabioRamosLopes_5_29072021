@@ -26,12 +26,14 @@
     <header class="w-screen h-16 shadow-md ">
         <div class="max-w-screen-xl h-16 mx-auto flex justify-between px-4 items-center ">
             <div class="h-16 flex items-center ">Orin'ours</div>
-            <nav class="w-max flex justify-center items-center">
+            
+            <nav class="relative w-max flex justify-center items-center">
                 <a href="panier.html" id="panier" class="flex items-center ">
+                    <div class="nb-articles cache ">  </div>
                     <i class="fas fa-shopping-basket mr-2 text-xl"></i>
                     <p class="font-bold text-xl">Panier</p>
                 </a>
-                <div id="nb-articles" class="ml-2 flex justify-center items-center relative hidden "> 2 </div>
+                
             </nav>
         </div>
     </header>
@@ -40,46 +42,48 @@
 
     <main>
         
-        <section>
-            <h2 class="">Vos articles</h2>
+        <div id="sectionbloc">
+            <section id="sectionArticles">
+                <h2 class="">Vos articles</h2>
 
-            <div id="liste-panier">
+                <div id="liste-panier">
+    
+                    <div class="articles-titre">
+                        <div>NOM</div><div>COULEUR</div><div>PRIX</div>
+                    </div>
 
-                <p class="cache">Votre panier est vide</p>
-                <div class="liste_articles"></div>
-                <div class="articles-titre">
-                    <div>Nom</div><div>Couleur</div><div>Quantité</div><div>Prix</div>
-                </div>
-                <!-- Espace interactif pour les articles -->
-                
-                <div class="articles-panier">
-                    <div class="name">Norbert</div>
-                    <div class="color">Chocolate</div>
-                    <div class="quantity">2</div>
-                    <div class="price">29.00 €</div>
+                    <div class="paniervide cache">Votre panier est vide</div>
+                    
+                    <!-- Espace interactif pour les articles -->
+                    
                 </div>
 
-            </div>
+                <div id="panierTotaux">
+                    <!-- Espace d'affichage du Total -->
+                </div>
+            </section>
 
-            <h2 class="">Vos informations</h2>
+            <section id="sectionFormulaire">
+                <h2 class="">Vos informations</h2>
 
-            <form id="contact" action="" method="">
-                <label for="firstName">Prénom</label>
-                <input id="firstName" type="text" placeholder="Prénom">
-                <label for="lastName">Nom</label>
-                <input id="lastName" type="text" placeholder="Nom">
-                <label for="assress">Adresse</label>
-                <input id="address" type="text" placeholder="Adresse">
-                <label for="city">Ville</label>
-                <input id="city" type="text" placeholder="Ville">
-                <label for="email">Mail</label>
-                <input id="email" type="text" placeholder="Email">
-
-                <button>Commander</button>
-                <a href="index.html" class="retour text-center">Continuez vos achats</a>
-            </form>
+                <form id="contact" action="" method="">
+                    <label for="firstName">Prénom :</label>
+                    <input id="firstName" type="text" placeholder="Prénom">
+                    <label for="lastName">Nom :</label>
+                    <input id="lastName" type="text" placeholder="Nom">
+                    <label for="assress">Adresse :</label>
+                    <input id="address" type="text" placeholder="Adresse">
+                    <label for="city">Ville :</label>
+                    <input id="city" type="text" placeholder="Ville">
+                    <label for="email">Mail :</label>
+                    <input id="email" type="text" placeholder="Email">
+    
+                    <button>Commander</button>
+                    <a href="index.html" class="retour text-center">Continuez vos achats</a>
+                </form>
+            </section>
             
-        </section>
+        </div>
     
     </main>
 
@@ -115,12 +119,14 @@
                 <a href=""><i class="fas fa-camera"></i>Oricam</a>
                 <a href=""><i class="fas fa-chair"></i>Orikea</a>
             </section>
-        </div>
-
-        <div id="footer_paiement">
-            <i class="fab fa-cc-paypal"></i>
-            <i class="fab fa-cc-visa"></i>
-            <i class="fab fa-cc-mastercard"></i>
+            <section>
+                <h6>PAIMENTS</h6>
+                <div id="footer_paiement">
+                    <i class="fab fa-cc-paypal"></i>
+                    <i class="fab fa-cc-visa"></i>
+                    <i class="fab fa-cc-mastercard"></i>
+                </div>
+            </section>
         </div>
 
         <div id="copyright" class="footer_div_centrale">

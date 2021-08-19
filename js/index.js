@@ -58,9 +58,9 @@ function mainIndex(){
     .then(function(data) {
 
         const objets = data;
-        console.table(data)
+        
         const nombreDePeluches = objets.length;
-        console.log(objets)
+
 
         function bientotNouveauProduits() {
             // création d'une carte si le nombre de produits est impair
@@ -69,14 +69,13 @@ function mainIndex(){
                 bientotNewPeluche.classList.add("bientot");
                 bientotNewPeluche.innerHTML = 
                 `<div class="text_bientot"> Bientôt <br>
-                d'autres peluches<br> 
-                aggrandiront <br>la famille</div>`;
+                de nouvelles<br> 
+                peluches <br>disponibles</div>`;
 
                 mainIndex.appendChild(bientotNewPeluche);
 
-            } else {
-                //rien
             }
+
         }
         
         function creationCartePourProduits() {
@@ -89,6 +88,7 @@ function mainIndex(){
                 
                 const urlForEachArticle = "article.html" + "?" + objets[objet]._id;
             
+                
                 let objetCarte = document.createElement("div");
                 objetCarte.classList.add("card");
                 objetCarte.innerHTML = 
