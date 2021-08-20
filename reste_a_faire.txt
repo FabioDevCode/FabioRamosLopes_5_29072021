@@ -13,3 +13,10 @@ RESTE a FAIRE
 4 - Affichage de la page commande.html avec les informations du retour serveur suite a la commande
     Stocker les informations dans localStorage
     Puis Affichage sur la page html puis suite a Validation > suppression dans local storage.
+
+
+Pour le bouton delete :
+    Supprimer élément avec slice() + index
+    Ajouter une class au bouton delete (class = id de la carte) > dynamique à la création
+    Lors du clic = mise a jour du panier dans localStorage
+    

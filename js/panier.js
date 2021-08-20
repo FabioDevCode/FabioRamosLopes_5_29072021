@@ -4,6 +4,12 @@ function affichePanier() {
 
     let getPanier = localStorage.getItem("panierKey");
     let numGetPanier = JSON.parse(getPanier);
+    console.log(numGetPanier.length);
+    if (numGetPanier.length == 0) {
+        const messagePanierVide = document.querySelector(".paniervide ")
+        messagePanierVide.classList.remove("cache");
+    }
+
 
     for (let articleChoisi in numGetPanier) {
 
@@ -23,8 +29,10 @@ function affichePanier() {
         `;
 
         tableauPanier.appendChild(carteFormatPanier);
-    
+
     }
+
+    console.log(numGetPanier);
 
     const allPrices = document.querySelectorAll(".price"); 
     const arrayAllPrices = Array.from(allPrices)
@@ -41,15 +49,11 @@ function affichePanier() {
         totalPanier += convertStrInNum;
     }
 
-    console.log(totalPanier);
-
     const affichageTotal = document.querySelector("#panierTotaux");
     let blocTotal = document.createElement("div");
     blocTotal.innerHTML =
     `<div>TOTAL : ${totalPanier} €</div>`;
 
     affichageTotal.appendChild(blocTotal);
+
 }
-
-
-

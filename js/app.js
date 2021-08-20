@@ -20,6 +20,7 @@ function convertPrice(price) {
     return (price / 100);
 }
 
+
 // Indicateur du nombre d'articles dans le panier
 function indicateurNbArticlePanier() {
 
