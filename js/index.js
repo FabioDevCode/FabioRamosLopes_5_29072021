@@ -55,16 +55,16 @@ function mainIndex(){
         return response.json();
 
     })
-    .then(function(data) {
+    .then(function(response) {
 
-        const objets = data;
-        
+        const objets = response;
         const nombreDePeluches = objets.length;
 
 
         function bientotNouveauProduits() {
             // création d'une carte si le nombre de produits est impair
             if (nombreDePeluches%2) {
+
                 let bientotNewPeluche = document.createElement("bientot");
                 bientotNewPeluche.classList.add("bientot");
                 bientotNewPeluche.innerHTML = 
@@ -88,7 +88,6 @@ function mainIndex(){
                 
                 const urlForEachArticle = "article.html" + "?" + objets[objet]._id;
             
-                
                 let objetCarte = document.createElement("div");
                 objetCarte.classList.add("card");
                 objetCarte.innerHTML = 

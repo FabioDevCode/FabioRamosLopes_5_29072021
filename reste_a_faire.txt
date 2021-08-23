@@ -1,7 +1,5 @@
 RESTE a FAIRE
 
-1 - Button de suppression article dans panier.html
-    Appel du panier dans localStorage puis le réactualiser le panier au clic
     
 2 - Validation du formulaire avant envoie
     Utiliser les REGEX, informations sur mise en place a chercher
@@ -15,8 +13,4 @@ RESTE a FAIRE
     Puis Affichage sur la page html puis suite a Validation > suppression dans local storage.
 
 
-Pour le bouton delete :
-    Supprimer élément avec slice() + index
-    Ajouter une class au bouton delete (class = id de la carte) > dynamique à la création
-    Lors du clic = mise a jour du panier dans localStorage
     

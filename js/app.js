@@ -1,7 +1,6 @@
 createPanier()
 indicateurNbArticlePanier()
 
-
 // Création de Panier
 function createPanier() {
 
@@ -10,10 +9,11 @@ function createPanier() {
         let panierArray = [];
         let panierArrayStr = JSON.stringify(panierArray);
         localStorage.setItem("panierKey", panierArrayStr);
-            
+           
     } 
 
 }
+
 
 // Converssion du prix
 function convertPrice(price) {
@@ -35,7 +35,7 @@ function indicateurNbArticlePanier() {
         headerReload.innerHTML =
         `
         <div class="max-w-screen-xl h-16 mx-auto flex justify-between px-4 items-center ">
-        <div class="h-16 flex items-center ">Orin'ours</div>
+        <div class="h-16 flex items-center "><a href="index.html">Orin'ours</a></div>
         
         <nav class="relative w-max flex justify-center items-center">
             <a href="panier.html" id="panier" class="flex items-center ">
@@ -50,6 +50,7 @@ function indicateurNbArticlePanier() {
 
         let affichageNbArticlesPanier = document.querySelector(".nb-articles");
         affichageNbArticlesPanier.classList.remove("cache");
-    }
-}
 
+    }
+        
+}

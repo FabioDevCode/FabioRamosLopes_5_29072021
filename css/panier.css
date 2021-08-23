@@ -118,7 +118,6 @@ h2 {
     width: 30%;
 }
 
-
 .delete {
     cursor: pointer;
     position: absolute;
@@ -137,7 +136,7 @@ h2 {
 
 #panierTotaux {
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-around;
     align-items: center;
     font-size: 1.2em;
     font-weight: 600;
@@ -150,7 +149,9 @@ h2 {
     border-radius: 8px;
 }
 
-
+#panierTotaux span {
+    margin-right: 10px;
+}
 
 /* Formulaire */
 #sectionFormulaire {
@@ -186,7 +187,7 @@ input {
     height: 50px;
     width: 100%;
     min-width: 310px;
-    margin-top: 35px;
+    margin: 35px auto 0 auto;
     outline: none;
     border: 2px solid transparent;
     padding-left: 130px;

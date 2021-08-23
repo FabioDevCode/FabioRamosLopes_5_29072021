@@ -1,26 +1,28 @@
-mainArticle()
+mainArticle();
 
 function mainArticle() {
 
     const urlWindow = window.location.search;
     let idArticle = urlWindow.slice(1);
-
     let urlArticle = `http://localhost:3000/api/teddies/` + idArticle;
 
     const mainArticle = document.querySelector("#mainArticle");
 
-
     fetch(urlArticle)
     .then(response => response.json()
 
-    .then(function(data) {
+    .then(function(response) {
 
-        const articleOurs = data;
-        const colors = data.colors;
+        const articleOurs = response;
+        const colors = response.colors;
 
         const priceEuro = convertPrice(articleOurs.price);
 
-        // Création des cartes au retour de l'API
+        createCartes();
+        addColors();
+        ajoutAuPanier();
+
+        // Création des cartes
         function createCartes() {
             let articleCarte = document.createElement("div");
             articleCarte.classList.add("article");
@@ -52,35 +54,30 @@ function mainArticle() {
             mainArticle.appendChild(articleCarte);
         }
 
-        createCartes()
-
-        // Ajout des couleurs dans les Cartes de façon dynamique en fonction du nombre
+    
+        // Ajout des couleurs dans les cartes
         function addColors() {
 
             const colorsIndex = document.querySelector('#color');
-
-            let numOfColors = 0;
             
-            for (numOfColors; numOfColors < colors.length; numOfColors++ ) {
+            for (let numOfColors = 0; numOfColors < colors.length; numOfColors++) {
                 colorsIndex.innerHTML += 
                 `<option class="optionColor" value="${colors[numOfColors]}">${colors[numOfColors]}</option>`
             };
         }
 
-        addColors();
-
-
+        // Ajout l'article de la page au panier
         function ajoutAuPanier() {
 
             const buttonSendPanier = document.querySelector("button");
 
-            buttonSendPanier.addEventListener("click", function(e) {
+            buttonSendPanier.addEventListener("click", function(event) {
     
-                e.preventDefault();
+                event.preventDefault();
 
-                setOrGetPanier();
+                getAndSetPanier();
                 
-                function setOrGetPanier() {
+                function getAndSetPanier() {
 
                     const nameArticleChoisi = document.querySelector("h2");
                     const urlArticleChoisi = window.location.search;
@@ -111,8 +108,6 @@ function mainArticle() {
             }) 
         }
 
-        ajoutAuPanier()
- 
     }));
 
 }
