@@ -1,16 +1,5 @@
 RESTE a FAIRE
 
-    
-2 - Validation du formulaire avant envoie
-    Utiliser les REGEX, informations sur mise en place a chercher
-
-3 - POST envoie du formauleire de commande
-    Formatage des données pour envoie
-    Method fetch POST pour envoie du formaulaire
-
-4 - Affichage de la page commande.html avec les informations du retour serveur suite a la commande
-    Stocker les informations dans localStorage
-    Puis Affichage sur la page html puis suite a Validation > suppression dans local storage.
-
-
-    
+- Avant l'envoie du formulaire mettre le tatal du Panier dans localStorage
+- Retour response du serveur mettre orderId dans localStorage
+- Puis avec afficher page de confirmation

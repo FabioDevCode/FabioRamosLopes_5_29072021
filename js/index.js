@@ -2,8 +2,6 @@ mainIndex()
 
 function mainIndex(){
 
-    console.log('Orinoco (Teddies) _ par Fabio R. LOPES');
-
     const mainIndex = document.querySelector("#mainIndex");
     const msgAccueil = document.querySelector(".msg-accueil");
     const body404 = document.querySelector("body");

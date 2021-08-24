@@ -67,17 +67,21 @@
             <section id="sectionFormulaire">
                 <h2 class="">Vos informations</h2>
 
-                <form id="contact" action="" method="">
+                <form id="contact" action="" method="POST">
                     <label for="firstName">Prénom :</label>
-                    <input id="firstName" type="text" placeholder="Prénom">
+                    <input id="firstName" type="text" name="firstName" placeholder="Prénom" class="">
+
                     <label for="lastName">Nom :</label>
-                    <input id="lastName" type="text" placeholder="Nom">
-                    <label for="assress">Adresse :</label>
-                    <input id="address" type="text" placeholder="Adresse">
+                    <input id="lastName" type="text" name="lastName" placeholder="Nom" class="">
+
+                    <label for="address">Adresse :</label>
+                    <input id="address" type="text" name="address" placeholder="Adresse" class="">
+
                     <label for="city">Ville :</label>
-                    <input id="city" type="text" placeholder="Ville">
+                    <input id="city" type="text" name="city" placeholder="Ville" class="">
+
                     <label for="email">Mail :</label>
-                    <input id="email" type="text" placeholder="Email">
+                    <input id="email" type="text" name="email" placeholder="Email" class="">
     
                     <button>Commander</button>
                     <a href="index.html" class="retour text-center">Continuez vos achats</a>
@@ -119,7 +123,7 @@
                 <a href=""><i class="fas fa-chair"></i>Orikea</a>
             </section>
             <section>
-                <h6>PAIMENTS</h6>
+                <h6>PAIEMENTS</h6>
                 <div id="footer_paiement">
                     <i class="fab fa-cc-paypal"></i>
                     <i class="fab fa-cc-visa"></i>

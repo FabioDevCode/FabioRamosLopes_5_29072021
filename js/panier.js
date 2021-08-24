@@ -100,3 +100,192 @@ function nbArticlesDansPanier() {
 
     }
 }
+
+//-------------------------------------------
+// Formulaire panier Validation
+//-------------------------------------------
+let form = document.querySelector("#contact")
+
+verifForm()
+
+function verifForm() {
+
+    form.firstName.addEventListener('change', function() {
+        validLetter(this);
+    });
+
+    form.lastName.addEventListener('change', function() {
+        validLetter(this);
+    });
+
+    form.address.addEventListener('change', function() {
+        validAddress(this);
+    });
+
+    form.city.addEventListener('change', function() {
+        validLetter(this);
+    });
+
+    form.email.addEventListener('change', function() {
+        validEmail(this);
+    });
+}
+
+envoieFormulaire()
+
+
+function envoieFormulaire() {
+
+    let button = document.querySelector("button");
+
+    button.addEventListener('click', function(e) {
+
+        e.preventDefault();
+
+        let getPanier = localStorage.getItem("panierKey");
+        let numGetPanier = JSON.parse(getPanier);
+
+
+        if (validLetter(form.firstName) && validLetter(form.lastName) && validAddress(form.address) && validLetter(form.city) && validEmail(form.email)) {
+            
+            if (numGetPanier == 0) {
+                
+                alert ("Vous ne pouvez pas commander un panier qui est vide, veuillez sélectionner un article au minimum");
+
+            } else {
+
+                // Récupération des srtings articles du panier
+                let products = [];
+
+                for (let articleInPanier in numGetPanier) {
+    
+                    let articlePanier = numGetPanier[articleInPanier];
+                    let convertInArray = JSON.parse(articlePanier);
+                    
+                    let getIdArtPanier = convertInArray.id;
+                    
+                    products.push(getIdArtPanier);
+                    
+                }
+                //---------------------------------------------
+
+
+                // Récupération du formulaire
+                let contact = {
+                    firstName: form.firstName.value,
+                    lastName: form.lastName.value,
+                    address: form.address.value,
+                    city: form.city.value,
+                    email: form.email.value
+                };
+                //---------------------------------------------
+
+
+                // Envoie des données avec FETCH
+                fetch("http://localhost:3000/api/teddies/order",
+                {
+                    headers: {
+                    'Accept': 'application/json',
+                    'Content-Type': 'application/json'
+                    },
+                    method: "POST",
+                    body: JSON.stringify({contact, products})
+                })
+                .then(response => response.json())
+                .then(function(response) {
+
+                    let objetRetour = response;
+
+                    console.log(objetRetour["orderId"]);
+                    
+
+
+                })
+                .catch(function(err){ console.log(err) })
+
+            }
+
+        } else {
+
+            if (numGetPanier == 0) {
+                alert ("Votre panier est vide, veuillez sélectionner au moins un article et le formulaire n'est pas correctement rempli");
+            } else {
+                alert ("Le formulaire n'est pas correctement rempli");
+            }
+        } 
+    });
+}
+
+
+// REGEX pour formulaire
+function validEmail(inputEmail) {
+    let emailRegex = new RegExp('^[a-zA-Z0-9.-_]+[@]{1}[a-zA-Z0-9.-_]+[.]{1}[a-z]{2,10}$', 'g');
+
+    let testEmail = emailRegex.test(inputEmail.value);
+
+    if (testEmail) {
+        inputEmail.classList.add("borderGreen");
+        inputEmail.classList.remove("borderRed");
+    } else {
+        inputEmail.classList.add("borderRed");
+        inputEmail.classList.remove("borderGreen");
+    }
+
+    if (inputEmail.value.length == 0) {
+        inputEmail.classList.remove("borderGreen");
+        inputEmail.classList.remove("borderRed");        
+    }
+
+    return testEmail;
+}
+
+function validLetter(inputLetter) {
+    let letterRegex = new RegExp('[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ,.-]$', 'g');
+
+    let testLetter = letterRegex.test(inputLetter.value);
+
+    if (inputLetter.value.length < 2) {
+        inputLetter.classList.add("borderRed");
+        inputLetter.classList.remove("borderGreen");
+        testLetter = false;
+    } else if (testLetter) {
+        inputLetter.classList.add("borderGreen");
+        inputLetter.classList.remove("borderRed");
+    } else {
+        inputLetter.classList.add("borderRed");
+        inputLetter.classList.remove("borderGreen");
+    }
+
+
+    if (inputLetter.value.length == 0) {
+        inputLetter.classList.remove("borderGreen");
+        inputLetter.classList.remove("borderRed");        
+    }
+    
+    return testLetter;
+}
+
+function validAddress(inputAddress) {
+    let addressRegex = new RegExp ('[0-9a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ,.-]$', 'g');
+
+    let addressTest = addressRegex.test(inputAddress.value);
+
+    if (inputAddress.value.length < 2) {
+        inputAddress.classList.add("borderRed");
+        inputAddress.classList.remove("borderGreen");
+        addressTest = false;
+    } else if (addressTest) {
+        inputAddress.classList.add("borderGreen");
+        inputAddress.classList.remove("borderRed");
+    } else {
+        inputAddress.classList.add("borderRed");
+        inputAddress.classList.remove("borderGreen");
+    }
+
+    if (inputAddress.value.length == 0) {
+        inputAddress.classList.remove("borderGreen");
+        inputAddress.classList.remove("borderRed");
+    }
+
+    return addressTest;
+}
