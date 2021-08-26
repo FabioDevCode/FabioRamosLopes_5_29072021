@@ -60,14 +60,14 @@ function pagePanier() {
 
         totalPanier += convertStrInNum;
     }
-
+    
     const affichageTotal = document.querySelector("#panierTotaux");
     let blocTotal = document.createElement("div");
     blocTotal.innerHTML =
-    `<div><span>TOTAL :</span> ${totalPanier} €</div>`;
+    `<span>TOTAL :</span><span class="totalPanierN">${totalPanier} €</span>`;
 
     affichageTotal.appendChild(blocTotal);
-
+    
 }
 
 
@@ -79,7 +79,7 @@ function deleteArt(indexDel) {
     localStorage.setItem("panierKey", newPanier);
     
     alert("Votre article à bien été supprimé");
-    setTimeout(700);
+    setTimeout(300);
     window.location.reload();
     
 }
@@ -90,12 +90,17 @@ function nbArticlesDansPanier() {
     let getPanier = localStorage.getItem("panierKey");
     let arrayGetPanier = JSON.parse(getPanier);
     const nbArticleInPanier = arrayGetPanier.length;
+
     if (nbArticleInPanier == 1) {
+
         let titrePanier = document.querySelector(".panier-art-titre");
         titrePanier.innerText = `Votre article`
+
     } else if (nbArticleInPanier > 1) {
+
         let titrePanier = document.querySelector(".panier-art-titre");
         titrePanier.innerText = `Vos ${nbArticleInPanier} articles`
+
     } else {
 
     }
@@ -107,30 +112,6 @@ function nbArticlesDansPanier() {
 let form = document.querySelector("#contact")
 
 verifForm()
-
-function verifForm() {
-
-    form.firstName.addEventListener('change', function() {
-        validLetter(this);
-    });
-
-    form.lastName.addEventListener('change', function() {
-        validLetter(this);
-    });
-
-    form.address.addEventListener('change', function() {
-        validAddress(this);
-    });
-
-    form.city.addEventListener('change', function() {
-        validLetter(this);
-    });
-
-    form.email.addEventListener('change', function() {
-        validEmail(this);
-    });
-}
-
 envoieFormulaire()
 
 
@@ -197,11 +178,20 @@ function envoieFormulaire() {
                     let objetRetour = response;
 
                     console.log(objetRetour["orderId"]);
+                    localStorage.setItem("orderKey", objetRetour["orderId"]);
                     
+                    let totaldupanier = document.querySelector(".totalPanierN");
+                    localStorage.setItem("totalKey", totaldupanier.textContent);
 
+
+                    alert("Veuillez cliquer sur OK pour comfirmer votre commande.");
+                    location.replace("commande.html");
+                })
+                .catch(function(error){
+
+                    console.log(error)
 
                 })
-                .catch(function(err){ console.log(err) })
 
             }
 
@@ -216,6 +206,29 @@ function envoieFormulaire() {
     });
 }
 
+// --- Vérification Formulaire avant envoie
+function verifForm() {
+
+    form.firstName.addEventListener('change', function() {
+        validLetter(this);
+    });
+
+    form.lastName.addEventListener('change', function() {
+        validLetter(this);
+    });
+
+    form.address.addEventListener('change', function() {
+        validAddress(this);
+    });
+
+    form.city.addEventListener('change', function() {
+        validLetter(this);
+    });
+
+    form.email.addEventListener('change', function() {
+        validEmail(this);
+    });
+}
 
 // REGEX pour formulaire
 function validEmail(inputEmail) {

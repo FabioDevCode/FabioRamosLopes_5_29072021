@@ -82,13 +82,10 @@ h2 {
     width: 30%;
 }
 
-
-/* ------------- */
 .paniervide {
     font-size: 1.2em;
     margin-top: 20px;
 }
-/* ------------ */
 
 .articles-panier {
     position: relative;
@@ -153,7 +150,6 @@ h2 {
     margin-right: 10px;
 }
 
-/* Formulaire */
 #sectionFormulaire {
     width: 50%;
     min-width: 320px;
@@ -184,20 +180,22 @@ label {
 }
 
 input {
+    font-family: "Poppins", Helvetica, sans-serif;
+    font-size: 1.1em;
     height: 50px;
     width: 100%;
     min-width: 310px;
     margin: 55px auto 0 auto;
     outline: none;
-    border: 2px solid transparent;
     padding-left: 130px;
     border: 2px solid #111827;
     border-radius: 6px;
 }
 
 input::placeholder {
+    font-family: "Poppins", Helvetica, sans-serif;
     display: flex;
-    font-size: .9em;
+    font-size: 1em;
     letter-spacing: .1em;
     color: lightgray;
 }
@@ -213,6 +211,7 @@ input:focus {
 }
 
 button {
+    font-family: "Poppins", Helvetica, sans-serif;
     margin-top: 25px;
     height: 50px;
     width: 200px;
@@ -231,6 +230,7 @@ button:hover {
 }
 
 a.retour {
+    text-align: center;
     margin-top: 15px;
     color: #acaaaa;
     display: block;

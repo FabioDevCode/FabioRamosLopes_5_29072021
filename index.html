@@ -12,7 +12,6 @@
 
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" 
     integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
-    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
 
     <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="./css/commun.css">
@@ -24,37 +23,37 @@
 </head>
 
 <body>
-    <header class="w-screen h-16 shadow-md ">
-        <div class="max-w-screen-xl h-16 mx-auto flex justify-between px-4 items-center ">
-            <div class="h-16 flex items-center "><a href="index.html">Orin'ours</a></div>
+    <header>
+        <div class="into-header">
+            <div><a href="index.html">Orin'ours</a></div>
             
-            <nav class="relative w-max flex justify-center items-center">
-                <a href="panier.html" id="panier" class="flex items-center ">
+            <nav>
+                <a href="panier.html" id="panier">
                     <div class="nb-articles cache"> </div>
-                    <i class="fas fa-shopping-basket mr-2 text-xl"></i>
-                    <p class="font-bold text-xl">Panier</p>
+                    <i class="fas fa-shopping-basket"></i>
+                    <p>Panier</p>
                 </a>
                 
             </nav>
         </div>
     </header>
 
-    <div id="banier" class="h-96 overflow-hidden relative flex justify-center items-center px-4 border-b-2 ">
-        <h1 class="mx-auto z-10 text-5xl font-extrabold text-center ">Ours en peluche fait à la main</h1>
-        <img src="./images/teddy-bears-4.jpg" alt="nounours" class="absolute w-full h-full object-cover object-center filter grayscale ">
+    <div id="banier">
+        <h1>Ours en peluche fait à la main</h1>
+        <img src="./images/teddy-bears-4.jpg" alt="nounours">
     </div>
 
-    <section class="flex w-screen flex-col items-center ">
+    <section id="sectionmain">
 
-        <h2 class="mt-12 text-3xl font-semibold ">Nos produits</h2>
+        <h2>Nos produits</h2>
         
-        <main class="w-full max-w-screen-xl mt-12 h-auto flex flex-wrap justify-evenly pb-16 " id="mainIndex">
+        <main id="mainIndex">
             <div class="msg-accueil">
                 <p>Merci de patienter.</p>
                 <p>Nous attendons le retour du serveur.</p>
             </div>
 
-            <!-- Espace dynamique d'affichage des cartes produits -->
+            <!-- Espace dynamique -->
 
         </main>
 

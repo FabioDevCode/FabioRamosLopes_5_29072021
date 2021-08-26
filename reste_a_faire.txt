@@ -1,5 +1,0 @@
-RESTE a FAIRE
-
-- Avant l'envoie du formulaire mettre le tatal du Panier dans localStorage
-- Retour response du serveur mettre orderId dans localStorage
-- Puis avec afficher page de confirmation

@@ -1,5 +1,6 @@
 mainArticle();
 
+
 function mainArticle() {
 
     const urlWindow = window.location.search;
@@ -60,9 +61,9 @@ function mainArticle() {
 
             const colorsIndex = document.querySelector('#color');
             
-            for (let numOfColors = 0; numOfColors < colors.length; numOfColors++) {
+            for (let nbColors = 0; nbColors < colors.length; nbColors++) {
                 colorsIndex.innerHTML += 
-                `<option class="optionColor" value="${colors[numOfColors]}">${colors[numOfColors]}</option>`
+                `<option class="optionColor" value="${colors[nbColors]}">${colors[nbColors]}</option>`
             };
         }
 
@@ -75,39 +76,32 @@ function mainArticle() {
     
                 event.preventDefault();
 
-                getAndSetPanier();
+                const nameArticleChoisi = document.querySelector("h2");
+                const urlArticleChoisi = window.location.search;
+                const couleurChoisi = document.querySelector("#color");
+                const prixArticleChoisi = document.querySelector(".prixArticle");
                 
-                function getAndSetPanier() {
+                const articleChoisi = {
+                    name: nameArticleChoisi.textContent,
+                    id: urlArticleChoisi.slice(1),
+                    color: couleurChoisi.options[couleurChoisi.selectedIndex].text,
+                    price: prixArticleChoisi.textContent
+                };
 
-                    const nameArticleChoisi = document.querySelector("h2");
-                    const urlArticleChoisi = window.location.search;
-                    const couleurChoisi = document.querySelector("#color");
-                    const prixArticleChoisi = document.querySelector(".prixArticle");
-                    
-                    const articleChoisi = {
-                        name: nameArticleChoisi.textContent,
-                        id: urlArticleChoisi.slice(1),
-                        color: couleurChoisi.options[couleurChoisi.selectedIndex].text,
-                        price: prixArticleChoisi.textContent
-                    };
-    
-                    const stringArticleChoisi = JSON.stringify(articleChoisi)
-    
-                    let getPanier = localStorage.getItem("panierKey");
+                const stringArticleChoisi = JSON.stringify(articleChoisi)
 
-                    let numGetPanier = JSON.parse(getPanier);
+                let getPanier = localStorage.getItem("panierKey");
 
-                    numGetPanier.push(stringArticleChoisi);
+                let numGetPanier = JSON.parse(getPanier);
 
-                    let strNumGetPanier = JSON.stringify(numGetPanier);
+                numGetPanier.push(stringArticleChoisi);
 
-                    localStorage.setItem("panierKey", strNumGetPanier);
+                let strNumGetPanier = JSON.stringify(numGetPanier);
 
-                    indicateurNbArticlePanier()
-                }  
+                localStorage.setItem("panierKey", strNumGetPanier);
+
+                indicateurNbArticlePanier()
             }) 
         }
-
     }));
-
 }

@@ -1,28 +1,36 @@
 mainIndex()
 
+
 function mainIndex(){
 
     const mainIndex = document.querySelector("#mainIndex");
     const msgAccueil = document.querySelector(".msg-accueil");
     const body404 = document.querySelector("body");
 
-
     let urlApi = `http://localhost:3000/api/teddies/`;
 
     fetch(urlApi)
-    
     .then(function(response) {
         // exécution en cas d'erreur
         if (response.status >= 400 && response.status < 600) {
             const codeErreur = response.status;
 
             body404.innerHTML = 
-            `<header class="w-screen h-16 shadow-md ">
-                <div class="max-w-screen-xl h-16 mx-auto flex justify-between px-4 items-center ">
-                    <div class="h-16 flex items-center ">Orin'ours</div>
+            `<header>
+                <div class="into-header">
+                    <div><a href="index.html">Orin'ours</a></div>
+                    
+                    <nav>
+                        <a href="panier.html" id="panier">
+                            <div class="nb-articles cache"> </div>
+                            <i class="fas fa-shopping-basket"></i>
+                            <p>Panier</p>
+                        </a>
+                        
+                    </nav>
                 </div>
             </header>
-
+    
             <main id="main404">
 
                 <div id="bloc404">
@@ -42,11 +50,50 @@ function mainIndex(){
                 </div>
 
             </main>
-
+    
             <footer>
+    
+                <div class="footer_div_centrale">
+                    <section>
+                        <h6>A PROPOS</h6>
+                        <a href="">Conditions générales de ventes</a>
+                        <a href="">Conditions générales d'utilisation</a>
+                        <a href="">Données personnelles</a>
+                        <a href="">Mentions</a>
+                    </section>
+                    <section>
+                        <h6>SERVICES</h6>
+                        <a href="">SAV</a>
+                        <a href="">Besoin d'aide ?</a>
+                        <a href="">Contactez-nous</a>
+                    </section>
+                    <section>
+                        <h6>LE GROUPE ORINOCO</h6>
+                        <a href="">A propos d'Orinours</a>
+                        <a href="">Recrutement</a>
+                        <a href="">Groupe Orinoco</a>
+                    </section>
+                    <section>
+                        <h6>NOS AUTRES SITES</h6>
+                        <a href=""><i class="fas fa-tshirt"></i>Oritextil</a>
+                        <a href=""><i class="fas fa-book"></i>Oribook</a>
+                        <a href=""><i class="fas fa-camera"></i>Oricam</a>
+                        <a href=""><i class="fas fa-chair"></i>Orikea</a>
+                    </section>
+                    <section>
+                        <h6>PAIEMENTS</h6>
+                        <div id="footer_paiement">
+                            <i class="fab fa-cc-paypal"></i>
+                            <i class="fab fa-cc-visa"></i>
+                            <i class="fab fa-cc-mastercard"></i>
+                        </div>
+                    </section>
+                </div>
+        
                 <div id="copyright" class="footer_div_centrale">
                     <p><i class="far fa-copyright"></i>2021 - Tous droits réservés - Orinoco & filiales </p>
                 </div>
+    
             </footer>`;
         }
 
@@ -57,6 +104,9 @@ function mainIndex(){
 
         const objets = response;
         const nombreDePeluches = objets.length;
+
+        creationCartePourProduits()
+        bientotNouveauProduits()
 
 
         function bientotNouveauProduits() {
@@ -71,9 +121,7 @@ function mainIndex(){
                 peluches <br>disponibles</div>`;
 
                 mainIndex.appendChild(bientotNewPeluche);
-
             }
-
         }
         
         function creationCartePourProduits() {
@@ -99,24 +147,22 @@ function mainIndex(){
                 mainIndex.appendChild(objetCarte);
             }
         }
-
-        creationCartePourProduits()
-        bientotNouveauProduits()
-        
     })
-    // Message d'erreur si problème de serveur
     .catch((error) => {
-
+        // Message d'erreur si problème de serveur
         function problemeServeur() {
+            
             msgAccueil.classList.add("cache");
             mainIndex.innerHTML = 
             `<div class="cardError">
                 <p> Désolé, nous n'avons pas pu charger les articles.</p> 
                 <p> Vérifier que le serveur soit bien fonctionnel.</p>
-            </div>`; 
+            </div>`;
+            
+            console.log(error);
         }
+
         problemeServeur()
         
     });
-    
 }

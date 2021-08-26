@@ -41,8 +41,6 @@ main {
     text-align: center;
 }
 
-
-
 #bloc-article-text h2 {
     margin-top: 50px;
     font-weight: 700;
@@ -65,12 +63,15 @@ label {
 }
 
 select {
+    font-size: 1em;
+    font-family: "Poppins", Arial, sans-serif;
+    height: 25px;
     width: 150px;
     margin-bottom: 100px;
 }
 
 button {
-    cursor: pointer;
+    font-size: 1em;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -109,7 +110,6 @@ a.retour:hover {
     transition: all 150ms linear;
 }
 
-/* Responsive */
 @media screen and (max-width: 1280px) {
 
     img {
