@@ -142,7 +142,7 @@ footer {
     }
 
     main {
-        min-height: none;
+        min-height: auto;
     }
 
     .message {

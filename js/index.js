@@ -131,7 +131,6 @@ function mainIndex(){
                 msgAccueil.classList.add("cache");
 
                 const priceEuro = convertPrice(objets[objet].price);
-                
                 const urlForEachArticle = "article.html" + "?" + objets[objet]._id;
             
                 let objetCarte = document.createElement("div");
@@ -151,7 +150,7 @@ function mainIndex(){
     .catch((error) => {
         // Message d'erreur si problème de serveur
         function problemeServeur() {
-            
+
             msgAccueil.classList.add("cache");
             mainIndex.innerHTML = 
             `<div class="cardError">
