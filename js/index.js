@@ -55,33 +55,33 @@ function mainIndex(){
     
                 <div class="footer_div_centrale">
                     <section>
-                        <h6>A PROPOS</h6>
+                        <h3>A PROPOS</h3>
                         <a href="">Conditions générales de ventes</a>
                         <a href="">Conditions générales d'utilisation</a>
                         <a href="">Données personnelles</a>
                         <a href="">Mentions</a>
                     </section>
                     <section>
-                        <h6>SERVICES</h6>
+                        <h3>SERVICES</h3>
                         <a href="">SAV</a>
                         <a href="">Besoin d'aide ?</a>
                         <a href="">Contactez-nous</a>
                     </section>
                     <section>
-                        <h6>LE GROUPE ORINOCO</h6>
+                        <h3>LE GROUPE ORINOCO</h3>
                         <a href="">A propos d'Orinours</a>
                         <a href="">Recrutement</a>
                         <a href="">Groupe Orinoco</a>
                     </section>
                     <section>
-                        <h6>NOS AUTRES SITES</h6>
+                        <h3>NOS AUTRES SITES</h3>
                         <a href=""><i class="fas fa-tshirt"></i>Oritextil</a>
                         <a href=""><i class="fas fa-book"></i>Oribook</a>
                         <a href=""><i class="fas fa-camera"></i>Oricam</a>
                         <a href=""><i class="fas fa-chair"></i>Orikea</a>
                     </section>
                     <section>
-                        <h6>PAIEMENTS</h6>
+                        <h3>PAIEMENTS</h3>
                         <div id="footer_paiement">
                             <i class="fab fa-cc-paypal"></i>
                             <i class="fab fa-cc-visa"></i>

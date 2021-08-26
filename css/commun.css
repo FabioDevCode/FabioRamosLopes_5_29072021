@@ -174,7 +174,7 @@ footer div section a {
     padding: 0 10px;
 }
 
-.footer_div_centrale section h6 {
+.footer_div_centrale section h6, .footer_div_centrale section h3 {
     margin-top: 25px;
     font-size: 1.2em;
     font-weight: 600;
