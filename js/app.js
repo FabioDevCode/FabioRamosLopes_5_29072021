@@ -10,8 +10,8 @@ function createPanier() {
         let panierArray = [];
         let panierArrayStr = JSON.stringify(panierArray);
         localStorage.setItem("panierKey", panierArrayStr);
-           
-    } 
+        
+    }
 }
 
 // Converssion du prix

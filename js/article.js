@@ -1,5 +1,4 @@
-mainArticle();
-
+mainArticle()
 
 function mainArticle() {
 
