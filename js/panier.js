@@ -211,22 +211,85 @@ function verifForm() {
 
     form.firstName.addEventListener('change', function() {
         validLetter(this);
+
+        const msgError = document.querySelector("#firstN");
+
+        if(validLetter(this) == false) {
+            
+            msgError.classList.remove("cache");
+
+        } else {
+
+            msgError.classList.add("cache");
+
+        }
     });
 
     form.lastName.addEventListener('change', function() {
         validLetter(this);
+
+        const msgError = document.querySelector("#lastN");
+        
+        if(validLetter(this) == false) {
+            
+            msgError.classList.remove("cache");
+
+        } else {
+
+            msgError.classList.add("cache");
+
+        }
+
     });
 
     form.address.addEventListener('change', function() {
         validAddress(this);
+
+        const msgError = document.querySelector("#addrS");
+        
+        if(validLetter(this) == false) {
+            
+            msgError.classList.remove("cache");
+
+        } else {
+
+            msgError.classList.add("cache");
+
+        }
+        
     });
 
     form.city.addEventListener('change', function() {
         validLetter(this);
+
+        const msgError = document.querySelector("#citY");
+        
+        if(validLetter(this) == false) {
+            
+            msgError.classList.remove("cache");
+
+        } else {
+
+            msgError.classList.add("cache");
+
+        }
+        
     });
 
     form.email.addEventListener('change', function() {
         validEmail(this);
+
+        const msgError = document.querySelector("#emaiL");
+        
+        if(validLetter(this) == false) {
+            
+            msgError.classList.remove("cache");
+
+        } else {
+
+            msgError.classList.add("cache");
+
+        }
     });
 }
 
@@ -253,7 +316,7 @@ function validEmail(inputEmail) {
 }
 
 function validLetter(inputLetter) {
-    let letterRegex = new RegExp('[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ,.-]$', 'g');
+    let letterRegex = new RegExp('[a-zA-Z ,.-]$', 'g');
 
     let testLetter = letterRegex.test(inputLetter.value);
 
